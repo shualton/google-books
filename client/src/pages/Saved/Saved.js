@@ -11,4 +11,27 @@ class Saved extends Component {
         books: [],
         target: "",
       };
+
+    componentMount() {
+        this.getSaved();
+      }
+    
+    getSaved = () => {
+    API.getSaved()
+        .then(res => {
+        if (res.data.length > 0) {
+            this.setState({
+            books: res.data,
+            target: "_blank"
+            });
+        } else {
+            this.setState({
+            noResults: true
+            });
+        }
+
+        })
+        .catch(err => console.log(err));
+      }
+    
 }
