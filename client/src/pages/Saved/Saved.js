@@ -29,9 +29,82 @@ class Saved extends Component {
             noResults: true
             });
         }
-
         })
         .catch(err => console.log(err));
       }
+    
+    deleteBook = id => {
+    API.deleteBook(id)
+        .then(res => this.getSavedBooks())
+        .catch(err => console.log(err));
+      }
+    
+    render() {
+    if (this.state.noResults) {
+      return (
+        <div>
+          <Header>
+            <h1 className="display-4">Google Book Searcher</h1>
+            <hr className="my-4" />
+            <p className="lead">
+              <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
+              <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+            </p>
+          </Header>
+          <Container>
+            <Link to="/">You have no saved books. Click here to find some.</Link>
+          </Container>
+        </div>
+      )
+    }
+    return (
+      <div>
+        <Header>
+          <h1 className="display-4">Google Book Searcher</h1>
+          <hr className="my-4" />
+          <p className="lead">
+            <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
+            <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+          </p>
+        </Header>
+        <Container>
+          <h2>Saved Books</h2>
+          <List>
+            {this.state.books.map(book => (
+              <Items key={book._id}>
+                <div className="date-div">
+                  <a
+                    key={book._id + "link"}
+                    href={book.link}
+                    target={this.state.target}
+                  >
+                    {book.title}
+                  </a>
+                  <p>Written By {book.author}</p>
+                  <p>
+                  <img align="left" style={{paddingRight:10}}
+                    src={book.image} alt="new"
+                  />
+                    {book.description}
+                  </p>
+                </div>
+                <div className="book-btn-div">
+                  <Button
+                    key={book._id + "btn"}
+                    btntype="info"
+                    id={book._id}
+                    disabled={book.link === "/"}
+                    onClick={() => this.deleteBook(book._id)}
+                  >
+                    Delete
+                </Button>
+                </div>
+              </Items>
+            ))}
+          </List>
+        </Container>
+      </div>
+    );
+  }
     
 }
