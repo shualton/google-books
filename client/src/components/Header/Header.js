@@ -1,6 +1,6 @@
 import React from "react";
 
-const Jumbotron = ({ children }) => (
+const Header= ({ children }) => (
   <div className="jumbotron jumbotron-fluid">
     <div 
       style={{ height: 150, clear: "both", paddingTop: 10, paddingBottom: 20, textAlign: "Center"}}

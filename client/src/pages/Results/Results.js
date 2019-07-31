@@ -41,7 +41,7 @@ class Results extends Component {
         if (this.state.noResults) {
           return (
             <div>
-              <Jumbotron>
+              <Header>
                 <h1 className="display-4">(React) Google Books Search</h1>
                 <p className="lead">Search for and annotate books of interest.</p>
                 <hr className="my-4" />
@@ -49,7 +49,7 @@ class Results extends Component {
                   <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
                   <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
                 </p>
-              </Jumbotron>
+              </Header>
               <Container>
                 <Link to="/">No results - click here to search again.</Link>
               </Container>
@@ -112,3 +112,5 @@ class Results extends Component {
         );
       }
 }
+
+export default Results;
