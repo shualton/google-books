@@ -47,12 +47,12 @@ class Saved extends Component {
             <h1 className="display-4">Google Book Searcher</h1>
             <hr className="my-4" />
             <p className="lead">
-              <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
-              <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+              <Link className="btn btn-default btn-lg" to="/" role="button">Search</Link>
+              <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved</Link>
             </p>
           </Header>
           <Container>
-            <Link to="/">You have no saved books. Click here to find some.</Link>
+            <Link to="/">Empty</Link>
           </Container>
         </div>
       )
@@ -63,8 +63,8 @@ class Saved extends Component {
           <h1 className="display-4">Google Book Searcher</h1>
           <hr className="my-4" />
           <p className="lead">
-            <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
-            <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+            <Link className="btn btn-default btn-lg" to="/" role="button">Search</Link>
+            <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved</Link>
           </p>
         </Header>
         <Container>
@@ -108,3 +108,5 @@ class Saved extends Component {
   }
     
 }
+
+export default Saved;

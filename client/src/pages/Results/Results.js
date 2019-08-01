@@ -12,7 +12,7 @@ class Results extends Component {
         target: "",
       };
 
-      componentMount() {
+      componentDidMount() {
         const data = this.props.location.data
         if (data && data.results.length > 0) {
     
@@ -42,12 +42,11 @@ class Results extends Component {
           return (
             <div>
               <Header>
-                <h1 className="display-4">(React) Google Books Search</h1>
-                <p className="lead">Search for and annotate books of interest.</p>
+                <h1 className="display-4">Google Books Searcher</h1>
                 <hr className="my-4" />
                 <p className="lead">
-                  <Link className="btn btn-default btn-lg" to="/" role="button">New Search</Link>
-                  <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved Books</Link>
+                  <Link className="btn btn-default btn-lg" to="/" role="button">Search</Link>
+                  <Link className="btn btn-default btn-lg" to="/saved" role="button">Saved</Link>
                 </p>
               </Header>
               <Container>
