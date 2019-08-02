@@ -22,7 +22,7 @@ class Search extends Component {
     formSubmit = event => {
         if (this.state.title) {
             const title = this.state.title.trim();
-            API.getNewBooks(title)
+            API.get(title)
               .then(res => {
                 this.setState({
                   toResults: true,

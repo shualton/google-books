@@ -18,7 +18,7 @@ module.exports = {
         db.googlebooks.catch(err => res.status(422).json(err));
       },
       update: function(req, res) {
-        db.googlebooks.findOneAndUpdate({ _id: req.params.id }, req.body)
+        db.googlebooks.update({ _id: req.params.id }, req.body)
         db.googlebooks.then(dbModel => res.json(dbModel))
         db.googlebooks.catch(err => res.status(422).json(err));
       },
