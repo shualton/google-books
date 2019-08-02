@@ -2,7 +2,7 @@
   "name": "googlebook-search",
   "version": "10.11.0",
   "private": true,
-  "proxy": "https://localhost:3001",
+  "proxy": "https://guarded-savannah-73120.herokuapp.com/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.2",
